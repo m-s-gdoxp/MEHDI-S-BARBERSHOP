@@ -1,0 +1,1847 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mehdi's Barbershop - Professional Grooming Services | Marrakech</title>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Oswald', sans-serif;
+            line-height: 1.6;
+            color: #2c2c2c;
+            background: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Professional Color Palette */
+        :root {
+            --primary-gold: #B8860B;
+            --accent-gold: #D4AF37;
+            --dark-gray: #2c2c2c;
+            --light-gray: #f8f8f8;
+            --medium-gray: #666666;
+            --white: #ffffff;
+            --border-color: #e0e0e0;
+            --black: #1a1a1a;
+            --whatsapp-green: #25D366;
+            --phone-blue: #007BFF;
+            --email-red: #DC3545;
+        }
+
+        /* Enhanced Creative Background Elements */
+        .creative-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+            opacity: 0.04;
+        }
+
+        .creative-bg::before {
+            content: '';
+            position: absolute;
+            top: 5%;
+            left: 3%;
+            width: 80px;
+            height: 80px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20 30 L80 30 L80 70 L20 70 Z" fill="none" stroke="%23B8860B" stroke-width="3"/><circle cx="50" cy="20" r="8" fill="%23D4AF37"/><line x1="45" y1="40" x2="55" y2="60" stroke="%23B8860B" stroke-width="3"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        .creative-bg::after {
+            content: '';
+            position: absolute;
+            top: 70%;
+            right: 5%;
+            width: 100px;
+            height: 100px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="none" stroke="%23D4AF37" stroke-width="3"/><path d="M30 50 Q50 30 70 50 Q50 70 30 50" fill="%23B8860B" opacity="0.3"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            animation: float 10s ease-in-out infinite reverse;
+        }
+
+        .scissors-icon {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            width: 70px;
+            height: 70px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M20 20 L50 50 L20 80 M80 20 L50 50 L80 80" stroke="%23B8860B" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="20" cy="20" r="10" fill="none" stroke="%23D4AF37" stroke-width="3"/><circle cx="20" cy="80" r="10" fill="none" stroke="%23D4AF37" stroke-width="3"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.06;
+            animation: rotate 25s linear infinite;
+        }
+
+        .razor-icon {
+            position: absolute;
+            bottom: 25%;
+            left: 5%;
+            width: 90px;
+            height: 90px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="35" y="15" width="30" height="70" rx="15" fill="none" stroke="%23B8860B" stroke-width="3"/><path d="M30 20 L70 20 L65 35 L35 35 Z" fill="%23D4AF37" opacity="0.4"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            animation: float 12s ease-in-out infinite;
+        }
+
+        .comb-icon {
+            position: absolute;
+            top: 40%;
+            left: 8%;
+            width: 60px;
+            height: 60px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect x="20" y="30" width="60" height="8" fill="%23B8860B" opacity="0.3"/><line x1="25" y1="38" x2="25" y2="55" stroke="%23D4AF37" stroke-width="2"/><line x1="35" y1="38" x2="35" y2="50" stroke="%23D4AF37" stroke-width="2"/><line x1="45" y1="38" x2="45" y2="60" stroke="%23D4AF37" stroke-width="2"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            animation: slide 15s ease-in-out infinite;
+        }
+
+        .brush-icon {
+            position: absolute;
+            top: 60%;
+            right: 15%;
+            width: 50px;
+            height: 50px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><ellipse cx="50" cy="40" rx="25" ry="15" fill="none" stroke="%23B8860B" stroke-width="3"/><rect x="45" y="55" width="10" height="30" fill="%23D4AF37" opacity="0.4"/></svg>');
+            background-size: contain;
+            background-repeat: no-repeat;
+            opacity: 0.05;
+            animation: float 9s ease-in-out infinite;
+        }
+
+        /* Page System */
+        .page {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        /* Remove floating buttons - they're childish */
+        .floating-contacts {
+            display: none;
+        }
+
+        .contact-btn {
+            display: none;
+        }
+
+        /* Professional Contact Form */
+        .contact-form {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .contact-form h3 {
+            color: var(--dark-gray);
+            margin-bottom: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: 0;
+            font-size: 1rem;
+            font-family: 'Oswald', sans-serif;
+            transition: all 0.3s ease;
+            background: var(--white);
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary-gold);
+            box-shadow: 0 0 0 3px rgba(184, 134, 11, 0.1);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        .submit-btn {
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold));
+            color: var(--white);
+            padding: 1.2rem 3rem;
+            border: none;
+            border-radius: 0;
+            font-size: 1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            font-family: 'Oswald', sans-serif;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(184, 134, 11, 0.4);
+        }
+
+        /* Professional Contact Methods with SVG Icons */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .contact-method {
+            background: var(--white);
+            padding: 2rem;
+            border-radius: 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary-gold);
+            text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-method:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .contact-icon-svg {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 1.5rem;
+            fill: var(--primary-gold);
+        }
+
+        .contact-method h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            color: var(--dark-gray);
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-method p {
+            color: var(--medium-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-value {
+            color: var(--primary-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 1.2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 20px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary-gold);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--dark-gray);
+            text-decoration: none;
+            letter-spacing: -1px;
+            cursor: pointer;
+        }
+
+        .logo-accent {
+            color: var(--primary-gold);
+            font-style: italic;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--primary-gold);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a.active {
+            color: var(--primary-gold) !important;
+        }
+
+        .nav-links a.active::after {
+            width: 100% !important;
+        }
+
+        .mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .mobile-menu span {
+            width: 25px;
+            height: 3px;
+            background: var(--dark-gray);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 85vh;
+            background: linear-gradient(135deg, rgba(44,44,44,0.9), rgba(184,134,11,0.2)), 
+                        linear-gradient(45deg, #f8f8f8 25%, transparent 25%), 
+                        linear-gradient(-45deg, #f8f8f8 25%, transparent 25%);
+            background-size: 100% 100%, 40px 40px, 40px 40px;
+            background-position: 0 0, 0 0, 20px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-top: 90px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><defs><pattern id="barber-pole" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse"><rect width="20" height="20" fill="none"/><path d="M0 0 L20 20 M0 20 L20 0" stroke="%23B8860B" stroke-width="1" opacity="0.1"/></pattern></defs><rect width="200" height="200" fill="url(%23barber-pole)"/></svg>');
+            opacity: 0.1;
+            animation: slide 30s linear infinite;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            letter-spacing: -2px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .hero-content .tagline {
+            font-size: 1.4rem;
+            margin-bottom: 2.5rem;
+            font-weight: 300;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-gold));
+            color: var(--white);
+            padding: 18px 45px;
+            text-decoration: none;
+            border-radius: 0;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.4s ease;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            border: 2px solid var(--accent-gold);
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(184,134,11,0.4);
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 2rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--medium-gray);
+            margin-bottom: 4rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            height: 300px;
+            background: var(--light-gray);
+            border-radius: 0;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: all 0.4s ease;
+            border: 3px solid transparent;
+        }
+
+        .gallery-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.4s ease;
+            filter: brightness(0.9) contrast(1.1);
+            background: var(--white);
+        }
+
+        .gallery-item:hover .gallery-placeholder img {
+            transform: scale(1.02);
+            filter: brightness(1) contrast(1.2);
+        }
+
+        /* Alternative layout for proper aspect ratio display */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 2.5rem;
+        }
+
+        /* Adjust height to match 1312x736 aspect ratio (1.78:1) */
+        .gallery-item {
+            height: 280px; /* Adjusted for better aspect ratio */
+        }
+
+        /* Fix tooltip positioning for contained images */
+        .gallery-tooltip {
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(26, 26, 26, 0.95);
+            color: var(--white);
+            padding: 10px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 100;
+            pointer-events: none;
+            border: 1px solid var(--primary-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        }
+
+        .gallery-tooltip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: rgba(26, 26, 26, 0.95);
+        }
+
+        .gallery-item:hover .gallery-tooltip {
+            opacity: 1;
+            visibility: visible;
+            top: -60px;
+        }
+
+        .gallery-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--light-gray), #ffffff);
+            color: var(--medium-gray);
+            font-size: 2.5rem;
+            border: 2px dashed var(--border-color);
+            position: relative;
+            overflow: hidden;
+            border-radius: 0;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            border-color: var(--primary-gold);
+            box-shadow: 0 15px 40px rgba(184,134,11,0.2);
+        }
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: all 0.4s ease;
+            filter: brightness(0.9) contrast(1.1);
+        }
+
+        .gallery-item:hover         .gallery-placeholder img {
+            transform: scale(1.05);
+            filter: brightness(1) contrast(1.2);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 2rem 1.5rem 1.5rem;
+            transform: translateY(100%);
+            transition: all 0.4s ease;
+            z-index: 2;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        .gallery-label {
+            font-size: 1.3rem;
+            margin: 0;
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .upload-text {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+            margin-top: 0.5rem;
+            font-style: italic;
+            font-weight: 300;
+        }
+
+        .gallery-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(184,134,11,0.1), transparent, rgba(212,175,55,0.1));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            z-index: 1;
+        }
+
+        .gallery-item:hover .gallery-placeholder::before {
+            opacity: 1;
+        }
+
+        /* Creative hover effects for different gallery items */
+        .gallery-item:nth-child(1) .gallery-placeholder::before {
+            background: linear-gradient(45deg, rgba(184,134,11,0.2), transparent);
+        }
+
+        .gallery-item:nth-child(2) .gallery-placeholder::before {
+            background: linear-gradient(-45deg, rgba(212,175,55,0.2), transparent);
+        }
+
+        .gallery-item:nth-child(3) .gallery-placeholder::before {
+            background: radial-gradient(circle, rgba(184,134,11,0.2), transparent);
+        }
+
+        .gallery-item:nth-child(4) .gallery-placeholder::before {
+            background: linear-gradient(135deg, rgba(212,175,55,0.2), transparent);
+        }
+
+        .gallery-item:nth-child(5) .gallery-placeholder::before {
+            background: linear-gradient(90deg, rgba(184,134,11,0.2), transparent);
+        }
+
+        .gallery-item:nth-child(6) .gallery-placeholder::before {
+            background: linear-gradient(180deg, rgba(212,175,55,0.2), transparent);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light-gray), #ffffff);
+            position: relative;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 3rem 2.5rem;
+            border-radius: 0;
+            text-align: left;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
+            transition: all 0.4s ease;
+            border-left: 4px solid var(--primary-gold);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.15);
+            border-left-color: var(--accent-gold);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .service-card p {
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            color: var(--medium-gray);
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .service-details {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 2px solid var(--light-gray);
+        }
+
+        .price {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            letter-spacing: -1px;
+        }
+
+        .duration {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* About Section */
+        .about {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: -1px;
+        }
+
+        .about-text p {
+            font-size: 1.15rem;
+            line-height: 1.9;
+            margin-bottom: 2rem;
+            color: var(--medium-gray);
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .credentials {
+            margin-top: 2.5rem;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.2rem;
+            font-size: 1.05rem;
+            color: var(--dark-gray);
+            font-weight: 500;
+        }
+
+        .credential-item::before {
+            content: "✓";
+            color: var(--primary-gold);
+            font-weight: bold;
+            margin-right: 1.2rem;
+            font-size: 1.2rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 2.5rem 2rem;
+            background: linear-gradient(135deg, var(--light-gray), #ffffff);
+            border-radius: 0;
+            border: 2px solid var(--border-color);
+            transition: all 0.3s ease;
+        }
+
+        .stat-item:hover {
+            border-color: var(--primary-gold);
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-gold);
+            margin-bottom: 0.8rem;
+            letter-spacing: -1px;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            color: var(--medium-gray);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--light-gray), #ffffff);
+            position: relative;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5rem;
+        }
+
+        .contact-info h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            margin-bottom: 2.5rem;
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            font-size: 1.05rem;
+            padding: 1.5rem;
+            background: var(--white);
+            border-radius: 0;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.08);
+            border-left: 3px solid var(--primary-gold);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .contact-icon {
+            width: 24px;
+            text-align: center;
+            color: var(--primary-gold);
+            margin-right: 1.5rem;
+            margin-top: 2px;
+            font-size: 1.2rem;
+        }
+
+        .contact-details {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            font-weight: 300;
+            letter-spacing: 0.3px;
+        }
+
+        .contact-details strong {
+            color: var(--dark-gray);
+            font-weight: 600;
+        }
+
+        .hours {
+            background: var(--white);
+            padding: 3rem;
+            border-radius: 0;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--primary-gold);
+        }
+
+        .hours h3 {
+            color: var(--dark-gray);
+            margin-bottom: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        .hour-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 1.05rem;
+        }
+
+        .hour-item:last-child {
+            border-bottom: none;
+        }
+
+        .day {
+            color: var(--dark-gray);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .time {
+            color: var(--medium-gray);
+            font-weight: 400;
+        }
+
+        /* Contact Pages */
+        .contact-page {
+            padding: 120px 0 100px;
+            background: var(--light-gray);
+            min-height: 100vh;
+        }
+
+        .contact-page-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            border-top: 5px solid var(--primary-gold);
+        }
+
+        .contact-page-icon {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-page h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--dark-gray);
+        }
+
+        .contact-page p {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        .contact-action {
+            display: inline-block;
+            padding: 15px 35px;
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0.5rem;
+        }
+
+        .whatsapp-action {
+            background: var(--whatsapp-green);
+        }
+
+        .phone-action {
+            background: var(--phone-blue);
+        }
+
+        .email-action {
+            background: var(--email-red);
+        }
+
+        .contact-action:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 10px 25px;
+            background: var(--medium-gray);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 3px;
+            transition: all 0.3s ease;
+        }
+
+        .back-btn:hover {
+            background: var(--dark-gray);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--black);
+            color: var(--white);
+            text-align: center;
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--accent-gold), var(--primary-gold));
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .footer-contact {
+            font-size: 1rem;
+            color: #cccccc;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #999999;
+            border-top: 1px solid #333333;
+            padding-top: 2rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes slide {
+            0%, 100% {
+                transform: translateX(0px);
+            }
+            50% {
+                transform: translateX(20px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(184, 134, 11, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(184, 134, 11, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(184, 134, 11, 0);
+            }
+        }
+
+        /* Mobile Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(255, 255, 255, 0.98);
+                flex-direction: column;
+                padding: 2rem;
+                box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+                backdrop-filter: blur(10px);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .mobile-menu {
+                display: flex;
+            }
+
+            .mobile-menu.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+
+            .mobile-menu.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .mobile-menu.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-content .tagline {
+                font-size: 1.1rem;
+                padding: 0 1rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .section-subtitle {
+                padding: 0 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .gallery-item {
+                height: 220px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .contact-methods {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .contact-form {
+                padding: 2rem;
+            }
+
+            .contact-page-content {
+                margin: 0 1rem;
+                padding: 2rem;
+            }
+
+            .contact-page h2 {
+                font-size: 2.2rem;
+            }
+
+            .contact-page p {
+                font-size: 1rem;
+            }
+
+            .service-details {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 0.9rem;
+            }
+
+            /* Hide background elements on mobile for performance */
+            .creative-bg::before,
+            .creative-bg::after,
+            .scissors-icon,
+            .razor-icon,
+            .comb-icon,
+            .brush-icon {
+                display: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card {
+                padding: 2rem 1.5rem;
+            }
+
+            .contact-page-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="creative-bg"></div>
+    <div class="scissors-icon"></div>
+    <div class="razor-icon"></div>
+    <div class="comb-icon"></div>
+    <div class="brush-icon"></div>
+
+    <!-- Remove the childish floating buttons -->
+
+    <header>
+        <nav class="container">
+            <div class="logo" onclick="showHome()">
+                MEHDI'S <span class="logo-accent">BARBERSHOP</span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#" onclick="showHome()">Home</a></li>
+                <li><a href="#" onclick="showGallery()">Gallery</a></li>
+                <li><a href="#" onclick="showServices()">Services</a></li>
+                <li><a href="#" onclick="showAbout()">About</a></li>
+                <li><a href="#" onclick="showContact()">Contact</a></li>
+            </ul>
+            <div class="mobile-menu" id="mobileMenu" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    <!-- HOME PAGE -->
+    <div id="homePage" class="page active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>MASTER OF THE CRAFT</h1>
+                <p class="tagline">Precision • Style • Excellence • Tradition</p>
+                <div class="cta-button" onclick="showContact()">Reserve Your Experience</div>
+            </div>
+        </section>
+    </div>
+
+    <!-- GALLERY PAGE -->
+    <div id="galleryPage" class="page">
+        <section class="gallery" style="margin-top: 90px;">
+            <div class="container">
+                <h2 class="section-title">Our Workshop</h2>
+                <p class="section-subtitle">Step inside our professional barbershop where traditional craftsmanship meets modern style.</p>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                            <img src="shop-front.jpg" alt="Shop Front">
+                            <div class="gallery-label">Shop Front</div>
+                            <div class="upload-text">Upload your storefront image</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                             <img src="interior-design.jpg" alt="Interior Design">
+                            <div class="gallery-label">Interior Design</div>
+                            <div class="upload-text">Show your workspace setup</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                             <img src="master-at-work.jpg" alt="Master at Work">
+                            <div class="gallery-label">Master at Work</div>
+                            <div class="upload-text">Action shots of services</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                             <img src="professional-tools.jpg" alt="Professional Tools">
+                            <div class="gallery-label">Professional Tools</div>
+                            <div class="upload-text">Display your equipment</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                            <img src="before-after.jpg" alt="Before & After">
+                            <div class="gallery-label">Before & After</div>
+                            <div class="upload-text">Showcase transformations</div>
+                        </div>
+                    </div>
+                    <div class="gallery-item">
+                        <div class="gallery-placeholder">
+                            📷
+                            <img src="client-testimonials.jpg" alt="Client Testimonials">
+                            <div class="gallery-label">Client Testimonials</div>
+                            <div class="upload-text">Happy customer moments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- SERVICES PAGE -->
+    <div id="servicesPage" class="page">
+        <section class="services" style="margin-top: 90px;">
+            <div class="container">
+                <h2 class="section-title">Signature Services</h2>
+                <p class="section-subtitle">Each service is crafted with precision and attention to detail.</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <h3>Signature Cut</h3>
+                        <p>Personalized haircuts tailored to your face shape and lifestyle. Includes consultation, precision cutting, and professional styling.</p>
+                        <div class="service-details">
+                            <span class="price">85 MAD</span>
+                            <span class="duration">45 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Traditional Shave</h3>
+                        <p>Classic hot towel shave using time-honored techniques. Features pre-shave preparation and post-shave care.</p>
+                        <div class="service-details">
+                            <span class="price">65 MAD</span>
+                            <span class="duration">35 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Beard Artistry</h3>
+                        <p>Expert beard sculpting and maintenance tailored to complement your facial features.</p>
+                        <div class="service-details">
+                            <span class="price">55 MAD</span>
+                            <span class="duration">30 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Master's Package</h3>
+                        <p>Complete grooming experience combining signature cut, traditional shave, and luxury treatments.</p>
+                        <div class="service-details">
+                            <span class="price">165 MAD</span>
+                            <span class="duration">90 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Luxury Wash & Style</h3>
+                        <p>Premium hair care treatment with imported products, followed by expert styling.</p>
+                        <div class="service-details">
+                            <span class="price">45 MAD</span>
+                            <span class="duration">25 Minutes</span>
+                        </div>
+                    </div>
+                    <div class="service-card">
+                        <h3>Executive Express</h3>
+                        <p>Professional quick service designed for busy professionals without compromising quality.</p>
+                        <div class="service-details">
+                            <span class="price">75 MAD</span>
+                            <span class="duration">35 Minutes</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ABOUT PAGE -->
+    <div id="aboutPage" class="page">
+        <section class="about" style="margin-top: 90px;">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <h2>Master Mehdi</h2>
+                        <p>With over 15 years of dedicated craftsmanship in barbering, Mehdi has perfected the balance between traditional Moroccan techniques and contemporary styling.</p>
+                        <p>Located in the heart of Marrakech, our barbershop represents a commitment to excellence and personalized attention.</p>
+                        <div class="credentials">
+                            <div class="credential-item">Certified Master Barber</div>
+                            <div class="credential-item">15+ Years Professional Experience</div>
+                            <div class="credential-item">Traditional & Modern Techniques</div>
+                            <div class="credential-item">Premium Product Specialist</div>
+                            <div class="credential-item">Continuing Education Graduate</div>
+                        </div>
+                    </div>
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">15+</div>
+                            <div class="stat-label">Years Mastering</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">3500+</div>
+                            <div class="stat-label">Satisfied Clients</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">6</div>
+                            <div class="stat-label">Days per Week</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Dedication</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CONTACT PAGE -->
+    <div id="contactPage" class="page">
+        <section class="contact" style="margin-top: 90px;">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Ready to book your appointment? Contact us through any of these professional channels.</p>
+                
+                <!-- Professional Contact Methods -->
+                <div class="contact-methods">
+                    <div class="contact-method" onclick="window.open('tel:+212668462441', '_self')">
+                        <svg class="contact-icon-svg" viewBox="0 0 24 24">
+                            <path d="M6.62 10.79c1.44 2.83 3.76 5.15 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+                        </svg>
+                        <h4>Phone Call</h4>
+                        <p>Direct line for immediate assistance</p>
+                        <div class="contact-value">+212 668 462 441</div>
+                    </div>
+                    
+                    <div class="contact-method" onclick="window.open('https://wa.me/212668462441?text=Hello%20Mehdi,%20I%20would%20like%20to%20book%20an%20appointment.', '_blank')">
+                        <svg class="contact-icon-svg" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.570-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.890-5.335 11.893-11.893A11.821 11.821 0 0020.893 3.506z"/>
+                        </svg>
+                        <h4>WhatsApp</h4>
+                        <p>Quick messaging for appointments</p>
+                        <div class="contact-value">Message Us</div>
+                    </div>
+                    
+                    <div class="contact-method" onclick="showEmailPage()">
+                        <svg class="contact-icon-svg" viewBox="0 0 24 24">
+                            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                        </svg>
+                        <h4>Email</h4>
+                        <p>Professional inquiries & requests</p>
+                        <div class="contact-value">Send Message</div>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Professional Contact Form -->
+                    <div class="contact-form">
+                        <h3>Book Your Appointment</h3>
+                        <form id="appointmentForm" onsubmit="handleFormSubmit(event)">
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" required placeholder="+212 xxx xxx xxx">
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="service">Service Required</label>
+                                    <select id="service" name="service" required>
+                                        <option value="">Select a service</option>
+                                        <option value="signature-cut">Signature Cut - 85 MAD</option>
+                                        <option value="traditional-shave">Traditional Shave - 65 MAD</option>
+                                        <option value="beard-artistry">Beard Artistry - 55 MAD</option>
+                                        <option value="masters-package">Master's Package - 165 MAD</option>
+                                        <option value="luxury-wash">Luxury Wash & Style - 45 MAD</option>
+                                        <option value="executive-express">Executive Express - 75 MAD</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="date">Preferred Date</label>
+                                    <input type="date" id="date" name="date" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time">Preferred Time</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Select time</option>
+                                    <option value="09:00">09:00 AM</option>
+                                    <option value="10:00">10:00 AM</option>
+                                    <option value="11:00">11:00 AM</option>
+                                    <option value="12:00">12:00 PM</option>
+                                    <option value="14:00">02:00 PM</option>
+                                    <option value="15:00">03:00 PM</option>
+                                    <option value="16:00">04:00 PM</option>
+                                    <option value="17:00">05:00 PM</option>
+                                    <option value="18:00">06:00 PM</option>
+                                    <option value="19:00">07:00 PM</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Additional Notes</label>
+                                <textarea id="message" name="message" placeholder="Any special requests or notes..."></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                Submit Appointment Request
+                            </button>
+                        </form>
+                    </div>
+                    
+                    <!-- Business Hours -->
+                    <div class="hours">
+                        <h3>Operating Hours</h3>
+                        <div class="hour-item">
+                            <span class="day">Monday - Thursday</span>
+                            <span class="time">9:00 AM - 8:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Friday</span>
+                            <span class="time">2:00 PM - 8:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Saturday</span>
+                            <span class="time">9:00 AM - 9:00 PM</span>
+                        </div>
+                        <div class="hour-item">
+                            <span class="day">Sunday</span>
+                            <span class="time">10:00 AM - 6:00 PM</span>
+                        </div>
+                        
+                        <div style="margin-top: 2rem; padding: 1.5rem; background: var(--light-gray); border-left: 4px solid var(--primary-gold);">
+                            <h4 style="color: var(--dark-gray); margin-bottom: 1rem;">Location</h4>
+                            <p style="color: var(--medium-gray); margin: 0;">
+                                <strong>Gueliz District</strong><br>
+                                Marrakech, Morocco<br>
+                                <em>Premium location in the business quarter</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- EMAIL CONTACT PAGE -->
+    <div id="emailPage" class="page">
+        <div class="contact-page">
+            <div class="container">
+                <div class="contact-page-content">
+                    <div class="contact-page-icon">✉️</div>
+                    <h2>Email Us</h2>
+                    <p>Send us your questions, appointment requests, or professional inquiries. We'll respond within 24 hours.</p>
+                    <a href="mailto:zakicoffeur705@gmail.com?subject=Barbershop Appointment Request&body=Hello Mehdi,%0D%0A%0D%0AI would like to book an appointment.%0D%0A%0D%0APreferred Date:%0D%0APreferred Time:%0D%0AService Needed:%0D%0A%0D%0AThank you!" 
+                       class="contact-action email-action">
+                        Send Email
+                    </a>
+                    <div style="margin-top: 2rem; padding: 1rem; background: #f8f8f8; border-radius: 5px;">
+                        <strong>Email:</strong> zakicoffeur705@gmail.com<br>
+                        <strong>Response Time:</strong> Within 24 hours<br>
+                        <strong>Best For:</strong> Appointment requests, inquiries
+                    </div>
+                    <a href="#" class="back-btn" onclick="showContact()">← Back to Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">MEHDI'S BARBERSHOP</div>
+                <div class="footer-contact">
+                    📞 +212 668 462 441 | ✉️ zakicoffeur705@gmail.com
+                </div>
+            </div>
+            <div class="copyright">
+                © 2025 Mehdi's Barbershop. All rights reserved. | Master Craftsmanship in Marrakech
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Fixed Page Navigation System
+        function showPage(pageId) {
+            // Hide all pages
+            document.querySelectorAll('.page').forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            const targetPage = document.getElementById(pageId);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            
+            // Update navigation active states
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+            
+            // Close mobile menu
+            closeMobileMenu();
+        }
+
+        function showHome() {
+            showPage('homePage');
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            document.querySelector('a[onclick="showHome()"]').classList.add('active');
+        }
+
+        function showGallery() {
+            showPage('galleryPage');
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            document.querySelector('a[onclick="showGallery()"]').classList.add('active');
+        }
+
+        function showServices() {
+            showPage('servicesPage');
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            document.querySelector('a[onclick="showServices()"]').classList.add('active');
+        }
+
+        function showAbout() {
+            showPage('aboutPage');
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            document.querySelector('a[onclick="showAbout()"]').classList.add('active');
+        }
+
+        function showContact() {
+            showPage('contactPage');
+            // Update active nav link
+            document.querySelectorAll('.nav-links a').forEach(link => link.classList.remove('active'));
+            document.querySelector('a[onclick="showContact()"]').classList.add('active');
+        }
+
+        function showEmailPage() {
+            showPage('emailPage');
+        }
+
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            navLinks.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const mobileMenu = document.getElementById('mobileMenu');
+            
+            navLinks.classList.remove('active');
+            mobileMenu.classList.remove('active');
+        }
+
+        // Gallery Upload Simulation
+        document.querySelectorAll('.gallery-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const label = this.querySelector('.gallery-label').textContent;
+                alert('Upload feature for: ' + label + '\n\nThis would open a file upload dialog in a real implementation.');
+            });
+        });
+
+        // Service Card Hover Effects
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.borderLeftColor = '#D4AF37';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.borderLeftColor = '#B8860B';
+            });
+        });
+
+        // Professional Form Handling
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData.entries());
+            
+            // Create WhatsApp message
+            const message = `*New Appointment Request*%0A%0A` +
+                `*Name:* ${data.firstName} ${data.lastName}%0A` +
+                `*Phone:* ${data.phone}%0A` +
+                `*Email:* ${data.email}%0A` +
+                `*Service:* ${data.service}%0A` +
+                `*Date:* ${data.date}%0A` +
+                `*Time:* ${data.time}%0A` +
+                `*Notes:* ${data.message || 'None'}%0A%0A` +
+                `Please confirm this appointment. Thank you!`;
+            
+            // Send via WhatsApp
+            window.open(`https://wa.me/212668462441?text=${message}`, '_blank');
+            
+            // Show success message
+            alert('Your appointment request has been sent via WhatsApp. Mehdi will confirm your booking shortly.');
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Initialize page and add event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show home page by default
+            showHome();
+            
+            // Add click event listeners to navigation links
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const onclick = this.getAttribute('onclick');
+                    if (onclick) {
+                        eval(onclick);
+                    }
+                });
+            });
+            
+            // Add click event to logo
+            document.querySelector('.logo').addEventListener('click', function(e) {
+                e.preventDefault();
+                showHome();
+            });
+        });
+
+        // Handle browser back button
+        window.addEventListener('popstate', function(event) {
+            if (event.state && event.state.page) {
+                showPage(event.state.page);
+            } else {
+                showHome();
+            }
+        });
+
+        // Add performance optimization for mobile
+        if (window.innerWidth <= 768) {
+            // Reduce animation complexity on mobile
+            document.querySelectorAll('.creative-bg, .scissors-icon, .razor-icon, .comb-icon, .brush-icon').forEach(el => {
+                el.style.display = 'none';
+            });
+        }
+    </script>
+</body>
+</html>
